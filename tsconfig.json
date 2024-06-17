@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "target": "esnext",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "strict": true,
+    "module": "nodenext",
+    "outDir": "./dist",
+    "sourceMap": true,
+    "declaration": true,
+    "lib": [
+      "esnext"
+    ]
+  },
+  "include": [
+    "src"
+  ]
+}
