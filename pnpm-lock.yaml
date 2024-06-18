@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      remeda:
+        specifier: ^2.0.11
+        version: 2.0.11
     devDependencies:
       '@biomejs/biome':
         specifier: ^1.8.1
@@ -479,6 +483,9 @@ packages:
   react-is@18.3.1:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
 
+  remeda@2.0.11:
+    resolution: {integrity: sha512-NO5CIw+puKNBbkmoJAISCjWyWV8DPcK9Bhu0KjdT4Z7q+kMlSgWziozA9rRhyQUNz04SaftubQjCHo6lyCVn6A==}
+
   rollup@4.18.0:
     resolution: {integrity: sha512-QmJz14PX3rzbJCN1SG4Xe/bAAX2a6NpCP8ab2vfu2GiUr8AQcr2nCV/oEO3yneFarB67zk8ShlIyWb2LGTb3Sg==}
     engines: {node: '>=18.0.0', npm: '>=8.0.0'}
@@ -530,6 +537,10 @@ packages:
   type-detect@4.0.8:
     resolution: {integrity: sha512-0fr/mIH1dlO+x7TlcMy+bIDqKPsw/70tVyeHW787goQjhmqaZe10uwLujubK9q9Lg6Fiho1KUKDYz0Z7k7g5/g==}
     engines: {node: '>=4'}
+
+  type-fest@4.20.1:
+    resolution: {integrity: sha512-R6wDsVsoS9xYOpy8vgeBlqpdOyzJ12HNfQhC/aAKWM3YoCV9TtunJzh/QpkMgeDhkoynDcw5f1y+qF9yc/HHyg==}
+    engines: {node: '>=16'}
 
   typescript@5.4.5:
     resolution: {integrity: sha512-vcI4UpRgg81oIRUFwR0WSIHKt11nJ7SAVlYNIu+QpqeyXP+gpQJy/Z4+F0aGxSE4MqwjyXvW/TzgkLAx2AGHwQ==}
@@ -975,6 +986,10 @@ snapshots:
 
   react-is@18.3.1: {}
 
+  remeda@2.0.11:
+    dependencies:
+      type-fest: 4.20.1
+
   rollup@4.18.0:
     dependencies:
       '@types/estree': 1.0.5
@@ -1026,6 +1041,8 @@ snapshots:
   tinyspy@2.2.1: {}
 
   type-detect@4.0.8: {}
+
+  type-fest@4.20.1: {}
 
   typescript@5.4.5: {}
 
