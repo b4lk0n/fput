@@ -1,10 +1,10 @@
-import { describe, expect, it } from "vitest"
+import { describe, expect, it } from "bun:test"
 import { fromNullish } from "./from-nullish.js"
 import { isNone } from "./option.js"
 import { unwrap } from "./unwrap.js"
 
 describe("Option.fromNullish", () => {
-  it("creates a `None` from a nullish value", () => {
+  it("creates None from nullish values", () => {
     const opt = fromNullish(null)
     expect(isNone(opt)).toBe(true)
 
@@ -13,7 +13,7 @@ describe("Option.fromNullish", () => {
   })
 
   const nonNullish = [0, -1, 5, false, Number.NaN, "", "hello"]
-  it.each(nonNullish)("creates a `Some` for %s", (val) => {
+  it.each(nonNullish)("creates Some<T> from %p", (val) => {
     const opt = fromNullish(val)
     expect(unwrap(opt)).toBe(val)
   })

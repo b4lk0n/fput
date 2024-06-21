@@ -1,13 +1,13 @@
-import { describe, expect, it } from "vitest"
+import { describe, expect, it } from "bun:test"
 import { none, some } from "./option.js"
 import { unwrap } from "./unwrap.js"
 
 describe("Option.unwrap", () => {
-  it("unwraps a `Some` value", () => {
+  it("unwraps Some<T> values", () => {
     expect(unwrap(some(5))).toBe(5)
   })
 
-  it("throws an Error when unwrapping a `None` value", () => {
+  it("throws when unwrapping None values", () => {
     expect(() => unwrap(none())).toThrow()
   })
 })

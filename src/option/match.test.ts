@@ -1,12 +1,12 @@
-import { describe, expect, it } from "vitest"
+import { describe, expect, it } from "bun:test"
 import { match } from "./match.js"
 import { none, some } from "./option.js"
 
-describe("match", () => {
+describe("Option.match", () => {
   const onNone = () => 1
   const onSome = (x: number) => x * 2
 
-  it("matches a none value", () => {
+  it("matches None values", () => {
     const opt = match(onNone, onSome)(none())
     expect(opt).toBe(1)
 
@@ -14,7 +14,7 @@ describe("match", () => {
     expect(opt2).toBe(1)
   })
 
-  it("matches a some value", () => {
+  it("matches Some values", () => {
     const opt = match(onNone, onSome)(some(2))
     expect(opt).toBe(4)
 

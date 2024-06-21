@@ -1,9 +1,10 @@
-import { describe, it, expect } from "vitest"
+import { describe, expect, it } from "bun:test"
 import { mapOr } from "./map-or.js"
 import { none, some } from "./option.js"
+import { unwrap } from "./unwrap.js"
 
 describe("Option.mapOr", () => {
-  it("transforms a some value", () => {
+  it("maps Some<T> to Some<F>", () => {
     const res = mapOr(5, (x: number) => x * 2)(some(1))
     expect(res).toHaveProperty("value", 2)
 
@@ -11,12 +12,12 @@ describe("Option.mapOr", () => {
     expect(res2).toHaveProperty("value", 12)
   })
 
-  it("returns default value for a none", () => {
+  it("maps to a default value for None values", () => {
     const mapper = (x: number) => x * 2
     const res = mapOr(5, mapper)(none())
-    expect(res).toHaveProperty("value", 5)
+    expect(unwrap(res)).toBe(5)
 
     const res2 = mapOr(none(), 5, mapper)
-    expect(res2).toHaveProperty("value", 5)
+    expect(unwrap(res2)).toBe(5)
   })
 })

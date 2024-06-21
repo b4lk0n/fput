@@ -1,11 +1,11 @@
-import { describe, expect, it } from "vitest"
-import { unwrapOr } from "./unwrap-or.js"
+import { describe, expect, it } from "bun:test"
 import { none, some } from "./option.js"
+import { unwrapOr } from "./unwrap-or.js"
 
 describe("Option.unwrapOr", () => {
   const def = 2
 
-  it("unwraps a `Some` value", () => {
+  it("unwraps Some<T>", () => {
     const val = unwrapOr(def)(some(5))
     expect(val).toBe(5)
 
@@ -13,7 +13,7 @@ describe("Option.unwrapOr", () => {
     expect(val2).toBe(5)
   })
 
-  it("returns a default value for a `None` value", () => {
+  it("returns a default value for None values", () => {
     const val = unwrapOr(def)(none())
     expect(val).toBe(def)
 
