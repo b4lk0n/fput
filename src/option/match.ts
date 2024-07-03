@@ -1,6 +1,7 @@
 import { purry } from "remeda"
 import type { Thunk, UnaryFn } from "../func.js"
-import { isSome, type Option } from "./option.js"
+import type { Option } from "./option.js"
+import { isSome } from "./option.js"
 import { unwrap } from "./unwrap.js"
 
 export function match<T, U>(

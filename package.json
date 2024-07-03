@@ -2,8 +2,32 @@
   "name": "fput",
   "version": "1.0.0",
   "type": "module",
+  "exports": {
+    "./func": {
+      "types": "./dist/func.d.ts",
+      "default": "./dist/func.js"
+    },
+    "./option": {
+      "types": "./dist/option/index.d.ts",
+      "default": "./dist/option/index.js"
+    },
+    "./result": {
+      "types": "./dist/result/index.d.ts",
+      "default": "./dist/result/index.js"
+    },
+    "./async-result": {
+      "types": "./dist/async-result/index.d.ts",
+      "default": "./dist/async-result/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "version": "changeset version",
+    "release": "bun run build && changeset publish"
+  },
   "devDependencies": {
     "@biomejs/biome": "^1.8.1",
+    "@changesets/cli": "^2.27.7",
     "@types/bun": "^1.1.5",
     "typescript": "^5.4.5"
   },

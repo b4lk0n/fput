@@ -10,11 +10,7 @@
     "outDir": "./dist",
     "sourceMap": true,
     "declaration": true,
-    "lib": [
-      "esnext"
-    ]
+    "lib": ["esnext"]
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
