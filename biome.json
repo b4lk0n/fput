@@ -1,5 +1,9 @@
 {
   "$schema": "https://biomejs.dev/schemas/1.8.1/schema.json",
+
+  "files": {
+    "ignore": ["dist", "node_modules", ".changeset"]
+  },
   "linter": {
     "rules": {
       "recommended": true
