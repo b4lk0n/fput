@@ -16,7 +16,7 @@ jobs:
 
   quality:
     runs-on: ubuntu-latest
-      - uses: actions/checkout@v4
     steps:
+      - uses: actions/checkout@v4
       - uses: biomejs/setup-biome@v2
       - run: biome ci .
